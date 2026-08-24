@@ -1,4 +1,5 @@
 streamlit
+streamlit[pdf]>=1.49.0
 pillow
 pandas
 numpy
