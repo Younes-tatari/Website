@@ -18,7 +18,11 @@ import publications
 # ==============================================================================
 # ---------------------- CUSTOM CSS --------------------------------------------
 # ==============================================================================
-st.markdown("""
+# ==============================================================================
+# ---------------------- CUSTOM CSS --------------------------------------------
+# ==============================================================================
+st.markdown(
+    """
 <style>
 /* Style radio group container */
     div[role="radiogroup"] {
@@ -45,18 +49,13 @@ st.markdown("""
     div[role="radiogroup"] label:hover {
         background-color: rgba(255, 255, 255, 0.15);
     }
-    /* Dark sidebar styling */
+    
+    /* Dark sidebar styling - explicit text contrast */
     [data-testid="stSidebar"] {
-        background-color: #0b132b;
-        color: #ffffff;
+        background-color: #0b132b !important;
     }
-    [data-testid="stSidebar"] * {
+    [data-testid="stSidebar"] *, [data-testid="stSidebar"] a {
         color: #ffffff !important;
-    }
-
-    /* Main app background */
-    .stApp {
-        background-color: #f4f6f9;
     }
 
     /* HERO CONTAINER STYLING */
@@ -64,8 +63,11 @@ st.markdown("""
         background: linear-gradient(135deg, #0a192f 0%, #1e3c72 50%, #2a5298 100%);
         border-radius: 16px;
         padding: 30px;
-        color: white;
+        color: #ffffff !important;
         margin-bottom: 25px;
+    }
+    .hero-card * {
+        color: #ffffff !important;
     }
 
     /* Target ONLY profile images for circular styling */
@@ -88,41 +90,59 @@ st.markdown("""
         font-size: 14px;
         font-weight: 500;
         backdrop-filter: blur(5px);
+        color: inherit;
     }
 
-    /* Feature cards */
+    /* Dynamic Feature Cards (Adapts to Light & Dark Mode) */
     .feature-card {
-        background-color: #ffffff;
+        background-color: var(--background-color, #ffffff);
         border-radius: 12px;
         padding: 20px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-        border: 1px solid #eef2f5;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        border: 1px solid rgba(128, 128, 128, 0.2);
         height: 100%;
     }
 
     .feature-title {
         font-weight: 700;
-        color: #1a202c;
+        color: var(--text-color, #1a202c);
         font-size: 16px;
         margin-bottom: 4px;
     }
 
     .feature-desc {
-        color: #718096;
+        color: var(--text-color, #718096);
+        opacity: 0.8;
         font-size: 13px;
         line-height: 1.4;
     }
     
+    /* Dark Mode Specific Overrides */
+    @media (prefers-color-scheme: dark) {
+        .feature-card {
+            background-color: #1e293b !important;
+            border-color: #334155 !important;
+        }
+        .feature-title {
+            color: #f8fafc !important;
+        }
+        .feature-desc {
+            color: #cbd5e1 !important;
+        }
+    }
+
     div.row-widget.stRadio > div {
         flex-direction: row;
         justify-content: space-around;
-        background-color: #ffffff;
+        background-color: var(--background-color, #ffffff);
         padding: 8px;
         border-radius: 12px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 </style>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 def display_image_safe(image_path, width=None, use_container=False):
     if os.path.exists(image_path):
