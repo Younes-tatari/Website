@@ -161,9 +161,9 @@ with st.sidebar:
     st.markdown("### ACADEMIC & PROFESSIONAL")
     
     affiliations = [
+        {"name": "CNH Industrial", "location": "Global", "logo": "assets/logos/CNH.png"},
         {"name": "Scientific Computing and Imaging Institute", "location": "USA", "logo": "assets/logos/sci.png"},
         {"name": "University of Utah", "location": "USA", "logo": "assets/logos/utah.png"},
-        {"name": "CNH Industrial", "location": "Global", "logo": "assets/logos/CNH.png"},
         {"name": "Harbin Institute of Technology", "location": "China", "logo": "assets/logos/HIT.png"},
         {"name": "Isfahan University of Technology", "location": "Iran", "logo": "assets/logos/IUT.png"}
     ]
