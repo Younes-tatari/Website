@@ -63,13 +63,111 @@ def render_experience_education():
         """)
 
         st.markdown("---")
+        
+        # Enhanced Technical Skills Section
         st.subheader("🛠️ Technical Skills & Tools")
 
+        # Custom CSS for skill badges and tool cards
         st.markdown("""
-        * **CFD Software:** OpenFOAM, SimVascular, Ansys-Fluent, Star-CCM+
-        * **Particle Methods:** LIGGGHTS (CFDEM), FlowVC, DPM, MPPIC
-        * **Fluid Physics:** Biotransport, Multiphase, Lagrangian Particle Tracking, Heat Transfer, Blood Flow Simulation
-        * **Machine Learning:** PyTorch, scikit-learn, TensorFlow, CNNs, PINNs, NumPy, Pandas, SciPy, Streamlit
-        * **Languages & CAD:** Python, Matlab, C++, Autodesk Inventor, SolidWorks
-        * **Visualization & HPC:** ParaView, 3D Slicer, Linux, SLURM HPC clusters
-        """)
+        <style>
+            .skill-card {
+                background-color: var(--background-color, #ffffff);
+                border: 1px solid rgba(128, 128, 128, 0.2);
+                border-radius: 10px;
+                padding: 12px 15px;
+                margin-bottom: 12px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            }
+            .skill-title {
+                font-weight: 700;
+                font-size: 0.92rem;
+                margin-bottom: 8px;
+                color: var(--text-color, #1a202c);
+            }
+            .tool-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background-color: rgba(128, 128, 128, 0.08);
+                border: 1px solid rgba(128, 128, 128, 0.2);
+                border-radius: 6px;
+                padding: 4px 10px;
+                margin: 3px;
+                font-size: 0.82rem;
+                font-weight: 500;
+            }
+            .tool-badge img {
+                width: 16px;
+                height: 16px;
+                object-fit: contain;
+            }
+            @media (prefers-color-scheme: dark) {
+                .skill-card {
+                    background-color: #1e293b !important;
+                    border-color: #334155 !important;
+                }
+            }
+        </style>
+        """, unsafe_allow_html=True)
+
+        # Skill Categories Data with Icons
+        skill_groups = [
+            {
+                "category": "🌀 CFD & Particle Methods",
+                "tools": [
+                    {"name": "OpenFOAM", "icon": "∇"},
+                    {"name": "Ansys Fluent", "icon": "https://cdn.simpleicons.org/ansys"},
+                    {"name": "SimVascular", "icon": "🫀"},
+                    {"name": "STAR-CCM+", "icon": "⚙️"},
+                    {"name": "LIGGGHTS", "icon": "🔴"},
+                    {"name": "DPM / MPPIC", "icon": "⚛️"}
+                ]
+            },
+            {
+                "category": "🧠 Machine Learning & Data",
+                "tools": [
+                    {"name": "PyTorch", "icon": "https://cdn.simpleicons.org/pytorch"},
+                    {"name": "TensorFlow", "icon": "https://cdn.simpleicons.org/tensorflow"},
+                    {"name": "scikit-learn", "icon": "https://cdn.simpleicons.org/scikitlearn"},
+                    {"name": "Streamlit", "icon": "https://cdn.simpleicons.org/streamlit"},
+                    {"name": "NumPy", "icon": "https://cdn.simpleicons.org/numpy"},
+                    {"name": "SciPy", "icon": "https://cdn.simpleicons.org/scipy"}
+                ]
+            },
+            {
+                "category": "💻 Languages & CAD",
+                "tools": [
+                    {"name": "Python", "icon": "https://cdn.simpleicons.org/python"},
+                    {"name": "C++", "icon": "https://cdn.simpleicons.org/cplusplus"},
+                    {"name": "MATLAB", "icon": "📐"},
+                    {"name": "SolidWorks", "icon": "🛠️"},
+                    {"name": "Inventor", "icon": "🔧"}
+                ]
+            },
+            {
+                "category": "📊 Visualization & HPC",
+                "tools": [
+                    {"name": "ParaView", "icon": "👁️"},
+                    {"name": "3D Slicer", "icon": "🩺"},
+                    {"name": "Linux", "icon": "https://cdn.simpleicons.org/linux"},
+                    {"name": "SLURM", "icon": "🖥️"}
+                ]
+            }
+        ]
+
+        # Render Grouped Cards
+        for group in skill_groups:
+            badges_html = ""
+            for t in group["tools"]:
+                if t["icon"].startswith("http"):
+                    icon_html = f'<img src="{t["icon"]}"/>'
+                else:
+                    icon_html = f'<span>{t["icon"]}</span>'
+                badges_html += f'<div class="tool-badge">{icon_html} <span>{t["name"]}</span></div>'
+
+            st.markdown(f"""
+            <div class="skill-card">
+                <div class="skill-title">{group['category']}</div>
+                <div>{badges_html}</div>
+            </div>
+            """, unsafe_allow_html=True)
