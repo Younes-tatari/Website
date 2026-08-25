@@ -24,7 +24,7 @@ def render_experience_education():
         * CFD-DEM four-way fluid-particle coupling in patient-specific vascular networks.
         * Patient Specific Modeling of Hemodynamics During Splenic Artery Embolization.
         * Developed data-driven and ML to generate interpretable predictive models for fracture sealing based on CFD-DEM
-          simulation data in geothermal systems.
+          simulation data in geothermal systems
         * Machine learning framework design (Adam-SINDy, GPR, PINNs) for system dynamics and fracture sealing.
 
         ---
@@ -115,7 +115,7 @@ def render_experience_education():
             {
                 "category": "🌀 CFD & Particle Methods",
                 "tools": [
-                    {"name": "OpenFOAM", "icon": "∇"},
+                    {"name": "OpenFOAM", "icon": "https://cdn.simpleicons.org/openfoam"},
                     {"name": "Ansys Fluent", "icon": "https://cdn.simpleicons.org/ansys"},
                     {"name": "SimVascular", "icon": "🫀"},
                     {"name": "STAR-CCM+", "icon": "⚙️"},
