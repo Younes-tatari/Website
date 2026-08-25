@@ -1,14 +1,17 @@
 import streamlit as st
 
 def render_home(display_image_safe):
-    col_text, col_img = st.columns([8, 2], gap="large")
+    # Adjust column proportions: [3, 1] keeps image at ~25% relative layout
+    col_text, col_img = st.columns([3, 1], gap="medium")
     
     with col_text:
         st.markdown("""
         <div class="hero-card">
-            <h1 style="font-size: 52px; margin-bottom: 0px; color: white;">Younes Tatari</h1>
-            <h3 style="color: #63b3ed; font-weight: 400; margin-top: 5px; margin-bottom: 20px;">PhD Researcher in Mechanical Engineering</h3>
-            <p style="font-size: 25px; line-height: 1.6; color: #e2e8f0; margin-bottom: 25px;">
+            <h1 style="font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 0px; color: white;">Younes Tatari</h1>
+            <h3 style="color: #63b3ed; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 400; margin-top: 5px; margin-bottom: 20px;">
+                PhD Researcher in Mechanical Engineering
+            </h3>
+            <p style="font-size: clamp(1rem, 1.3vw, 1.25rem); line-height: 1.6; color: #e2e8f0; margin-bottom: 25px;">
                 Computational modeling researcher working at the intersection of fluid mechanics, 
                 particle transport, multiphysics simulation, and data-driven scientific machine 
                 learning. My work combines CFD, CFD–DEM, reduced-order modeling, and 
@@ -27,7 +30,10 @@ def render_home(display_image_safe):
         """, unsafe_allow_html=True)
         
     with col_img:
-        display_image_safe("assets/profile.jpg", width=300, use_container=True)
+        # Wrap image in profile container class and remove static width argument
+        st.markdown('<div class="profile-pic-container">', unsafe_allow_html=True)
+        display_image_safe("assets/profile.jpg", use_container=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     # Bottom 4 Feature Cards
     f1, f2, f3, f4 = st.columns(4)

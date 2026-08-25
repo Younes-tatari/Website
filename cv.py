@@ -6,7 +6,7 @@ def render_cv():
     st.header("📄 Curriculum Vitae")
 
     # ---------------------- SECTION 1: CV PREVIEW & DOWNLOAD ----------------------
-    cv_file_path = "Younes_Tatari__CV.pdf"
+    cv_file_path = "assets/Younes_Tatari__CV.pdf"
 
     if os.path.exists(cv_file_path):
         with open(cv_file_path, "rb") as pdf_file:

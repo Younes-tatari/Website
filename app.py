@@ -18,9 +18,6 @@ import publications
 # ==============================================================================
 # ---------------------- CUSTOM CSS --------------------------------------------
 # ==============================================================================
-# ==============================================================================
-# ---------------------- CUSTOM CSS --------------------------------------------
-# ==============================================================================
 st.markdown(
     """
 <style>
@@ -146,10 +143,12 @@ st.markdown(
 
 def display_image_safe(image_path, width=None, use_container=False):
     if os.path.exists(image_path):
-        if width:
+        if use_container:
+            st.image(image_path, use_container_width=True)
+        elif width:
             st.image(image_path, width=width)
         else:
-            st.image(image_path, use_container_width=use_container)
+            st.image(image_path, use_container_width=True)
     else:
         st.write("🖼️")
 
@@ -191,8 +190,7 @@ with st.sidebar:
             <img src="{linkedin_svg}" width="22"/> LinkedIn
         </a>
         <a href="https://scholar.google.com/citations?user=kH2LO3MAAAAJ&hl=en" target="_blank" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
-            <img src="{Google_svg}" width="22"/> <span> Google Scholar </span>
-            <img src="{scholar_svg}" width="22"/> 
+            <img src="{Google_svg}" width="22"/> <span> Google Scholar 
         </a>
         <a href="https://www.youtube.com/@younestatari4645" target="_blank" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
             <img src="{youtube_svg}" width="22"/> YouTube Channel
