@@ -115,7 +115,7 @@ def render_experience_education():
             {
                 "category": "🌀 CFD & Particle Methods",
                 "tools": [
-                    {"name": "OpenFOAM", "icon": "https://cdn.simpleicons.org/openfoam"},
+                    {"name": "OpenFOAM", "icon": "∇"},
                     {"name": "Ansys Fluent", "icon": "https://cdn.simpleicons.org/ansys"},
                     {"name": "SimVascular", "icon": "🫀"},
                     {"name": "STAR-CCM+", "icon": "⚙️"},
