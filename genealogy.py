@@ -3,7 +3,7 @@ import streamlit as st
 def render_genealogy(display_image_safe):
     st.header("🧬 Academic Genealogy")
     st.write(
-        "**My academic lineage goes through scientists like Gauss, Ohm, Fourier, Lagrange, Euler, and Bernoulli.**"
+        "**My academic lineage goes through scientists like Gauss, Poisson, Dirichlet, Ohm, Fourier, Lagrange, Euler, and Bernoulli.**"
     )
 
     st.write("")
