@@ -14,6 +14,7 @@ import Research
 import experience_education
 import cv
 import publications
+import genealogy
 
 # ==============================================================================
 # ---------------------- CUSTOM CSS --------------------------------------------
@@ -141,6 +142,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# ==============================================================================
+# ---------------------- HELPER FUNCTIONS --------------------------------------
+# ==============================================================================
+# DEFINE THE FUNCTION FIRST BEFORE CALLING IT
 def display_image_safe(image_path, width=None, use_container=False):
     if os.path.exists(image_path):
         if use_container:
@@ -190,7 +195,7 @@ with st.sidebar:
             <img src="{linkedin_svg}" width="22"/> LinkedIn
         </a>
         <a href="https://scholar.google.com/citations?user=kH2LO3MAAAAJ&hl=en" target="_blank" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
-            <img src="{Google_svg}" width="22"/> <span> Google Scholar 
+            <img src="{Google_svg}" width="22"/> <span> Google Scholar </span>
         </a>
         <a href="https://www.youtube.com/@younestatari4645" target="_blank" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
             <img src="{youtube_svg}" width="22"/> YouTube Channel
@@ -199,14 +204,16 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
 # ---------------------- MAIN CONTENT ----------------------
-# Banner Image remains strictly rectangular
+# NOW IT IS SAFE TO CALL THIS
 display_image_safe("assets/logos/banner.jpg", use_container=True)
 st.write("")
 
-
-#selected_tab = st.radio(label="Navigation",options=["Home", "Research", "Experience & Education", "CV", "Publications"],horizontal=True,label_visibility="collapsed")
-
-selected_tab = st.segmented_control(label="Navigation",options=["Home", "Research", "Experience & Education", "CV", "Publications"],default="Home",label_visibility="collapsed")
+selected_tab = st.segmented_control(
+    label="Navigation",
+    options=["Home", "Research", "Experience & Education", "CV", "Publications", "Academic Genealogy"],
+    default="Home",
+    label_visibility="collapsed"
+)
 
 st.write("")
 
@@ -220,3 +227,5 @@ elif selected_tab == "CV":
     cv.render_cv()
 elif selected_tab == "Publications":
     publications.render_publications()
+elif selected_tab == "Academic Genealogy":
+    genealogy.render_genealogy(display_image_safe)
