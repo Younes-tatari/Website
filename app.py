@@ -188,17 +188,29 @@ with st.sidebar:
     scholar_svg = "https://cdn.simpleicons.org/googlescholar"
     Google_svg = "https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
     youtube_svg = "https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+    email_svg = "https://cdn-icons-png.flaticon.com/512/732/732200.png"
+    map_svg = "https://cdn-icons-png.flaticon.com/512/854/854878.png"
+
+    # Office location link (points directly to SCI Institute on Google Maps)
+    office_maps_url = "https://maps.google.com/?q=Scientific+Computing+and+Imaging+Institute+University+of+Utah"
+    my_email = "younes.tatari@sci.utah.edu"  # Update with your preferred email address
 
     st.markdown(f"""
     <div style="display: flex; flex-direction: column; gap: 12px;">
         <a href="https://www.linkedin.com/in/younes-tatari-b1baa0110/" target="_blank" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
-            <img src="{linkedin_svg}" width="22"/> LinkedIn
+            <img src="{linkedin_svg}" width="22"/> <span>LinkedIn</span>
         </a>
         <a href="https://scholar.google.com/citations?user=kH2LO3MAAAAJ&hl=en" target="_blank" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
-            <img src="{Google_svg}" width="22"/> <span> Google Scholar </span>
+            <img src="{Google_svg}" width="22"/> <span>Google Scholar</span>
         </a>
         <a href="https://www.youtube.com/@younestatari4645" target="_blank" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
-            <img src="{youtube_svg}" width="22"/> YouTube Channel
+            <img src="{youtube_svg}" width="22"/> <span>YouTube Channel</span>
+        </a>
+        <a href="mailto:{my_email}" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
+            <img src="{email_svg}" width="22"/> <span>Younes.tatari@sci.utah.edu</span>
+        </a>
+        <a href="{office_maps_url}" target="_blank" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
+            <img src="{map_svg}" width="22"/> <span>SCI Institute, Office Location</span>
         </a>
     </div>
     """, unsafe_allow_html=True)
