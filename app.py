@@ -188,8 +188,8 @@ with st.sidebar:
     scholar_svg = "https://cdn.simpleicons.org/googlescholar"
     Google_svg = "https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
     youtube_svg = "https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
-    email_svg = "📥"
-    map_svg = "https://cdn-icons-png.flaticon.com/512/854/854878.png"
+    email_svg = "https://cdn-icons-png.flaticon.com/128/9068/9068642.png"
+    map_svg = "https://cdn-icons-png.flaticon.com/128/2875/2875433.png"
 
     # Office location link (points directly to SCI Institute on Google Maps)
     office_maps_url = "https://maps.google.com/?q=Scientific+Computing+and+Imaging+Institute+University+of+Utah"
