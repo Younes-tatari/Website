@@ -15,6 +15,7 @@ import experience_education
 import cv
 import publications
 import genealogy
+import news
 
 # ==============================================================================
 # ---------------------- CUSTOM CSS --------------------------------------------
@@ -222,7 +223,7 @@ st.write("")
 
 selected_tab = st.segmented_control(
     label="Navigation",
-    options=["Home", "Research", "Experience & Education", "CV", "Publications", "Academic Genealogy"],
+    options=["Home", "Research", "Experience & Education", "CV", "Publications", "Academic Genealogy","News"],
     default="Home",
     label_visibility="collapsed"
 )
@@ -241,3 +242,5 @@ elif selected_tab == "Publications":
     publications.render_publications()
 elif selected_tab == "Academic Genealogy":
     genealogy.render_genealogy(display_image_safe)
+elif selected_tab == "News":
+    news.render_news(display_image_safe)  # <-- Render news tab
