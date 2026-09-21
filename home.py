@@ -11,7 +11,7 @@ def render_home(display_image_safe):
             <h3 style="color: #63b3ed; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 400; margin-top: 5px; margin-bottom: 20px;">
                 <span style="color: #fc8181; display: block;">I simulate Fluid Flow.</span>
                 <span style="color: #fc8181; display: block;">But, </span>
-                <span style="color: #68d391; display: block; margin-top: 4px;">With Agentic AI, I can do a lot more!!</span></h3>
+                <span style="color: #68d391; display: block; margin-top: 4px;">With Agentic AI, I engineer what comes next!!</span></h3>
             <p style="font-size: clamp(1rem, 1.3vw, 1.25rem); line-height: 1.6; color: #e2e8f0; margin-bottom: 25px;">
                 Computational modeling researcher working at the intersection of fluid mechanics, 
                 particle transport, multiphysics simulation, and data-driven scientific machine 
